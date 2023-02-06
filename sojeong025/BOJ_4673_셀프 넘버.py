@@ -8,4 +8,6 @@ def self_number(num):
 
 answer=[]
 for i in range(1,10001):
-    
+    answer.append(self_number(i))
+    if i not in answer:
+        print(i)
