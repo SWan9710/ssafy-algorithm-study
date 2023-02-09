@@ -1,23 +1,24 @@
-def boyer_moore(short, long):
-    M, N = len(short), len(long)
-    l = M-1
-    while l < N:
-        s = -1
-        d = 0
-        while long[l] == short[s]:
-            if s == -M: return 1
-            l -= 1
-            s -= 1
-        while long[l] != short[s]:
-            if s == -M: break
-            s -= 1
-            d += 1
-        l += d
-    return 0
+def boyer_moore(pattern, text):
+    P, T = len(pattern), len(text)
+    t = P
+    while t <= T:
+        p = dt = -1
+        while -P <= p and pattern[p] == text[t+dt]:
+            p -= 1
+            dt -= 1
+        if p < -P:
+            return 1
 
+        jump = 0
+        while -P <= p and pattern[p] != text[t+dt]:
+            jump += 1
+            p -= 1
+        t += jump
+
+    return 0
 
 T = int(input())
 for t in range(T):
-    short = input()
-    long = input()
-    print(f"#{t+1}", boyer_moore(short, long))
+    pattern = input()
+    text = input()
+    print(f"#{t+1}", boyer_moore(pattern, text))
