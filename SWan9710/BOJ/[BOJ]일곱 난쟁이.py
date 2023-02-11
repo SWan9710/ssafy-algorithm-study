@@ -10,7 +10,8 @@ for i in range(9):                      # i = 0 ~ 9
         if arr[i] + arr[j] == over:     # arr의 i번째 값과 j번째 값이 over값과 같다면
             if i > j:                   # i값과 j값의 크기를 비교
                 arr.pop(i)              # i 가 j보다 크다면 arr의 i번째 값을 없애주면 리스트의 인덱스가 1씩 감소
-                arr.pop(j+1)            # 해당 인덱스 값에 1을 더해줘서 조건에 맞는 값을 빼주기    
+                arr.pop(j+1)            # 해당 인덱스 값에 1을 더해줘서 조건에 맞는 값을 빼주기
+                                        # remove 이용해서 값 자체를 제거해주기
             else:
                 arr.pop(i)
                 arr.pop(j-1)
