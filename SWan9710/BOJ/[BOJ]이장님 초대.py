@@ -11,11 +11,6 @@ for i in range(N):
 T.sort(reverse=True)
 print(T[0]+1)
 
-
-
-
-
-
 # count = 0
 # while True:
 #     for i in range(len(T)):
