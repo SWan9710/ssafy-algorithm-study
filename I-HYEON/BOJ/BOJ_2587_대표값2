@@ -1,0 +1,9 @@
+L = []
+for i in range(5):
+    L.append(int(input()))
+
+L.sort()
+print(L)
+
+# print(sum(L)//len(L))
+# print(L[round(len(L)/2)])
