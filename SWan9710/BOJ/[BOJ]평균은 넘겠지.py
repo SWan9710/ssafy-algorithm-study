@@ -14,4 +14,6 @@ for i in range(c):
         if int(x[k]) > avg:
             count += 1
     total_result = ((100 / (len(x)-1) * count))
+
+
     print('%.3f'%total_result+'%')
