@@ -14,6 +14,7 @@ for l in height:
         if sum(height) -l -m == 100 :
             height.remove(l)
             height.remove(m)
+    
 
 for hei in height:
     print(hei)
