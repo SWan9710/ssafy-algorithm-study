@@ -1,7 +1,8 @@
-T = int(input())
+import sys
+T = int(sys.stdin.readline())
 for _ in range(T):
-    _, _, K = map(int, input().split())
-    baechus = [tuple(map(int, input().split())) for _ in range(K)]
+    _, _, K = map(int, sys.stdin.readline().split())
+    baechus = [tuple(map(int, sys.stdin.readline().split())) for _ in range(K)]
     
     cnt = 0  # 지렁이 수
     worm = {}  # 배추 : 입주 지렁이
