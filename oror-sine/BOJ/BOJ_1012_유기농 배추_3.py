@@ -3,8 +3,8 @@ import sys
 
 T = int(sys.stdin.readline())
 
-ds = zip((0, -1, 1, 0), 
-         (-1, 0, 0, 1))
+ds = tuple(zip((0, -1, 1, 0), 
+               (-1, 0, 0, 1)))
 
 for _ in range(T):
     _, _, K = map(int, sys.stdin.readline().split())
@@ -18,7 +18,7 @@ for _ in range(T):
                 y, x= queue.popleft()
                 for dy, dx in ds:
                     ny, nx = y+dy, x+dx
-                    if (ny, nx) in cabbages:
+                    if cabbages.get((y+dy, x+dx)):
                         cabbages[(ny, nx)] = 0
                         queue.append((ny, nx))
             cnt += 1

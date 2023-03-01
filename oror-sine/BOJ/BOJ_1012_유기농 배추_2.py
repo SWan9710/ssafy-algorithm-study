@@ -2,8 +2,8 @@ import sys
 
 T = int(sys.stdin.readline())
 
-ds = zip((0, -1, 1, 0), 
-         (-1, 0, 0, 1))
+ds = tuple(zip((0, -1, 1, 0), 
+               (-1, 0, 0, 1)))
 
 for _ in range(T):
     _, _, K = map(int, sys.stdin.readline().split())
@@ -16,9 +16,8 @@ for _ in range(T):
             while stack:
                 y, x= stack.pop()
                 for dy, dx in ds:
-                    ny, nx = y+dy, x+dx
-                    if (ny, nx) in cabbages:
-                        cabbages[(ny, nx)] = 0
-                        stack.append((ny, nx))
+                    if cabbages.get((y+dy, x+dx)):
+                        cabbages[(y+dy, x+dx)] = 0
+                        stack.append((y+dy, x+dx))
             cnt += 1
     print(cnt)
