@@ -1,3 +1,0 @@
-colors:
-        print(row)
-    print()
